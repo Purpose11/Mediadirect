@@ -13,7 +13,7 @@ import ServicesGrid from "./components/services-grid";
 import Footer from "./components/Footer";
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-purple-950 text-white overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white overflow-hidden">
       <LoadingScreen />
       {/* Social Media Sidebar */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center gap-6 p-4">
