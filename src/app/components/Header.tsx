@@ -8,7 +8,7 @@ import {
   Youtube,
   Instagram,
   Facebook,
-  AlignRight,
+  ChartNoAxesGantt,
 } from "lucide-react";
 
 const Header = () => {
@@ -30,7 +30,7 @@ const Header = () => {
         </div>
 
         <button className="flex items-center gap-2 text-gray-200">
-          <AlignRight className="w-6 h-6" />
+          <ChartNoAxesGantt className="w-8 h-8" />
           <span className="hidden md:inline">Menu</span>
         </button>
       </header>

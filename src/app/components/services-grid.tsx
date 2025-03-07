@@ -65,7 +65,7 @@ const services: Service[] = [
 
 export default function ServicesGrid() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 w-[80%] mx-auto">
+    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 w-[80%]">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-2xl font-bold mb-8">OUR SERVICES</h2>
         <p className="max-w-3xl mx-auto text-gray-400 text-base">
