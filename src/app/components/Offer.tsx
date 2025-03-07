@@ -26,7 +26,7 @@ export default function Home() {
       <main className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Headline */}
-          <div className="mb-20 text-center">
+          <div className="mb-20">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-purple-500">
                 WE ARE A BILINGUAL AGENCY:
@@ -42,7 +42,7 @@ export default function Home() {
           {/* Four Columns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Column 1 */}
-            <div className="bg-black/60 p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center hover:bg-black/80 transition-all">
+            <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
               <div className="mb-6 text-purple-500">
                 <CustomerIcon />
               </div>
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
 
             {/* Column 2 */}
-            <div className="bg-black/60 p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center hover:bg-black/80 transition-all">
+            <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
               <div className="mb-6 text-purple-500">
                 <StrategyIcon />
               </div>
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* Column 3 */}
-            <div className="bg-black/60 p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center hover:bg-black/80 transition-all">
+            <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
               <div className="mb-6 text-purple-500">
                 <DigitalIcon />
               </div>
@@ -78,7 +78,7 @@ export default function Home() {
             </div>
 
             {/* Column 4 */}
-            <div className="bg-black/60 p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center hover:bg-black/80 transition-all">
+            <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
               <div className="mb-6 text-purple-500">
                 <CultureIcon />
               </div>
@@ -91,38 +91,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      {/* Mobile Social Links */}
-      <div className="fixed bottom-0 left-0 right-0 flex justify-center gap-6 p-4 bg-black/80 backdrop-blur-sm md:hidden z-30">
-        <Link
-          href="#"
-          aria-label="LinkedIn"
-          className="hover:text-purple-500 transition-colors"
-        >
-          <Linkedin className="w-5 h-5" />
-        </Link>
-        <Link
-          href="#"
-          aria-label="YouTube"
-          className="hover:text-purple-500 transition-colors"
-        >
-          <Youtube className="w-5 h-5" />
-        </Link>
-        <Link
-          href="#"
-          aria-label="Instagram"
-          className="hover:text-purple-500 transition-colors"
-        >
-          <Instagram className="w-5 h-5" />
-        </Link>
-        <Link
-          href="#"
-          aria-label="Facebook"
-          className="hover:text-purple-500 transition-colors"
-        >
-          <Facebook className="w-5 h-5" />
-        </Link>
-      </div>
     </div>
   );
 }

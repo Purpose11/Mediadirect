@@ -6,13 +6,15 @@ import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import Offer from "./components/Offer";
 import VideoBackground from "@/app/components/video-background";
-
+import Work from "./components/Work";
+import Purpose from "./components/Purpose";
+import ClientGrid from "./components/client-grid";
+import ServicesGrid from "./components/services-grid";
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-purple-950 text-white overflow-hidden">
       <LoadingScreen />
-      <VideoBackground />
-
       {/* Social Media Sidebar */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center gap-6 p-4">
         <Link href="#" aria-label="LinkedIn">
@@ -34,9 +36,20 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <Hero />
-      <AboutUs />
+      <Purpose />
       <Offer />
+      <div className="bg-black">
+        <ServicesGrid />
+      </div>
+      <main className="container mx-auto py-20 bg-black/80">
+        <div className="border border-white/10 w-[80%] mx-auto">
+          <ClientGrid />
+        </div>
+      </main>
+      <div className="bg-black">
+        <Footer />
+      </div>
+
       {/* Mobile Social Links */}
       <div className="fixed bottom-0 left-0 right-0 flex justify-center gap-6 p-4 bg-purple-950/80 md:hidden">
         <Link href="#" aria-label="LinkedIn">

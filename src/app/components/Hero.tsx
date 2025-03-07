@@ -1,10 +1,11 @@
 import React from "react";
 import ScrollIndicator from "@/app/components/scroll-indicator";
+import VideoBackground from "./video-background";
 const Hero = () => {
   return (
     <div>
       <section id="hero" className="relative min-h-screen overflow-hidden">
-        {/* <VideoBackground /> */}
+        <VideoBackground />
 
         <div className="relative z-10 flex flex-col justify-center items-center min-h-screen px-4 sm:px-6 md:px-8 pt-20">
           <div className="w-[90%] mx-auto">

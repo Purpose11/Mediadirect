@@ -2,7 +2,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/images/logo.png";
-import { Menu, Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
+import {
+  Menu,
+  Linkedin,
+  Youtube,
+  Instagram,
+  Facebook,
+  AlignRight,
+} from "lucide-react";
 
 const Header = () => {
   return (
@@ -22,9 +29,9 @@ const Header = () => {
           </Link>
         </div>
 
-        <button className="flex items-center gap-2 text-white">
+        <button className="flex items-center gap-2 text-gray-200">
+          <AlignRight className="w-6 h-6" />
           <span className="hidden md:inline">Menu</span>
-          <Menu className="w-6 h-6" />
         </button>
       </header>
     </div>
