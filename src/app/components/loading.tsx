@@ -12,7 +12,7 @@ export default function LoadingScreen() {
       // Add a small delay for smoother transition
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
@@ -21,7 +21,7 @@ export default function LoadingScreen() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-purple-950">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
       <div className="text-center">
         <div className="relative w-24 h-24 mx-auto mb-8">
           <div className="absolute top-0 left-0 w-full h-full border-4 border-purple-400 rounded-full opacity-30 animate-ping"></div>

@@ -1,41 +1,126 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/images/logo.png";
-import {
-  Menu,
-  Linkedin,
-  Youtube,
-  Instagram,
-  Facebook,
-  ChartNoAxesGantt,
-} from "lucide-react";
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div>
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-30 flex justify-between items-center p-4 sm:p-6 md:p-8 ">
-        <div className="logo">
-          <Link href="/">
-            <Image
-              src={logo}
-              alt="tjs logo"
-              width={120}
-              height={80}
-              className="w-24 md:w-32"
-              priority
-            />
-          </Link>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95" : "transparent"}`}
+    >
+      <div className="relative">
+         <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="flex items-center justify-between py-4 md:py-6">
+            {/* Logo */}
+            <div className="flex flex-col">
+              <Link href="/" className="inline-block">
+                <div className="flex items-baseline">
+                  <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-extralight tracking-tight">
+                    mediadirect<span className="font-normal">Ai</span>
+                  </h1>
+                </div>
+              </Link>
+              <p className="text-white text-xs uppercase tracking-widest mt-1 font-light">Powered by AI. Driven by Strategy. </p>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link
+                href="#aboutus"
+                className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="#services"
+                className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors"
+              >
+                Services
+              </Link>
+              <Link
+                href="#think-tank"
+                className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors"
+              >
+                Think Tank
+              </Link>
+              <Link
+                href="/contact"
+                className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/contact"
+                className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold uppercase text-sm px-6 py-2 rounded-sm transition-colors"
+              >
+                Connect
+              </Link>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        <button className="flex items-center gap-2 text-gray-200">
-          <ChartNoAxesGantt className="w-8 h-8" />
-          <span className="hidden md:inline">Menu</span>
-        </button>
-      </header>
-    </div>
-  );
-};
+        {/* Mobile Navigation */}
+        <div
+          className={`md:hidden bg-black absolute w-full transition-all duration-300 ${isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
+        >
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <Link
+              href="#about"
+              className="text-white uppercase text-sm tracking-wider py-2 border-b border-gray-800"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="#services"
+              className="text-white uppercase text-sm tracking-wider py-2 border-b border-gray-800"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              href="#think-tank"
+              className="text-white uppercase text-sm tracking-wider py-2 border-b border-gray-800"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Think Tank
+            </Link>
+            <Link
+              href="/contact"
+              className="text-white uppercase text-sm tracking-wider py-2 border-b border-gray-800"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold uppercase text-sm px-6 py-2 rounded-sm transition-colors inline-block w-full text-center mt-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Connect
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
 
-export default Header;
+export default Header

@@ -7,14 +7,13 @@ const AboutUs = () => {
   return (
     <div>
       <section
-        id="about"
         className="relative min-h-screen bg-[#121212] overflow-hidden"
       >
         <div className="relative z-10 flex flex-col justify-center pt-24 pb-32 px-4 sm:px-6 md:px-8 ">
           <div className="w-[80%] mx-auto">
             <div className="mb-12 md:mb-16">
               <Link
-                href="#about"
+                href="#"
                 className="inline-flex items-center gap-2 text-sm hover:text-purple-400 transition-colors"
               >
                 <span className="w-2 h-2 rounded-full bg-current"></span>
@@ -23,7 +22,7 @@ const AboutUs = () => {
             </div>
 
             {/* Hero Text */}
-            <div className="space-y-4 mb-12 md:mb-16">
+            <div className="space-y-4 mb-12 md:mb-16"  id="#aboutus">
               <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
                 <div className="text-outline mb-2 animate-fade-in">WE ARE</div>
                 <div className="text-purple-400 animate-fade-in delay-300">
@@ -32,21 +31,13 @@ const AboutUs = () => {
                 <div className="animate-fade-in delay-600">SERVICES</div>
               </h2>
               <p className="text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed animate-fade-in delay-600">
-                An independent, full-service marketing communications agency
-                focused on finding your brand's purpose and delivering customer
-                experiences to drive business growth.
-              </p>
-            </div>
+              MediaDirectAI is a media and technology company with offices in the United States, South Africa, and Nigeria. 
+              We specialize in elevating brands through authentic storytelling that inspires emotion and enriches human connection.
+              At our core is a team of agile problem-solvers, fiercely committed to maximizing our clients’ return on investment.
+              Founded in July 2009 to improve our clients’ strategic communications and market shares, we’ve supported high-level business leaders, political leaders, corporations, global campaigns, nonprofits, and UN agencies. 
+              Our roots are grounded in the expertise of our founding Principal Adeola Akinremi, whose deep experience in brand development and strategic communications spans both the competitive U.S. market and emerging economies.
 
-            {/* Team Image */}
-            <div className="relative w-full aspect-[16/6] rounded-lg overflow-hidden animate-fade-in delay-600">
-              <Image
-                src={aboutus}
-                alt="The Voice Society Team"
-                fill
-                className="object-cover"
-                priority
-              />
+              </p>
             </div>
           </div>
         </div>

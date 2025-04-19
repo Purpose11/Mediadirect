@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { MonitorPlay, Lightbulb, Video, BarChart3 } from "lucide-react";
+import { MonitorPlay, Lightbulb, Video, BarChart3, Presentation } from "lucide-react";
 
 interface Service {
   icon: React.ReactNode;
@@ -22,6 +22,18 @@ const services: Service[] = [
       "Messaging Strategy",
       "Research",
       "Channel Planning",
+    ],
+  },
+  {
+    icon: < Presentation className="w-12 h-12 text-purple-500" />,
+    title: "STRATEGIC COMMUNICATIONS PLANNING",
+    items: [
+      "Media Relations",
+      "Storytelling",
+    "Issues Management",
+    "Reputation Management",
+    "Crisis Communications",
+
     ],
   },
   {
@@ -65,19 +77,18 @@ const services: Service[] = [
 
 export default function ServicesGrid() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 w-[80%]">
+    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 w-[95%]" id="services">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-2xl font-bold mb-8">OUR SERVICES</h2>
-        <p className="max-w-3xl mx-auto text-gray-400 text-base">
-          IF IT'S MARKETING COMMUNICATIONS RELATED, WE CAN DO IT. MOST OF THE
-          WORK IS DONE IN-HOUSE, BUT WE DON'T SHY AWAY FROM BRINGING IN
-          ADDITIONAL RESOURCES THAT CAN DELIVER SPECIALIZED SERVICES BETTER,
-          FASTER AND CHEAPER. WHATEVER THE CASE, WE FIND A WAY TO DELIVER BEYOND
-          EXPECTATIONS.
+        <p className="max-w-3xl mx-auto text-gray-400 text-base uppercase">
+        We blend creative content strategy with cutting-edge AI and data intelligence to deliver high-impact results. 
+        Our in-house Think Tank understands how to move fast, think smart, and act with precision. 
+        We unlock insights for growth, optimizing brand awareness for performance. 
+        We’re a digital solution for leading and rising companies.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {services.map((service, index) => (
           <div
             key={index}

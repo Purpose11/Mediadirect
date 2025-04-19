@@ -1,39 +1,93 @@
-import React from "react";
-import ScrollIndicator from "@/app/components/scroll-indicator";
-import VideoBackground from "./video-background";
-const Hero = () => {
+"use client"
+
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+
+export default function Hero() {
+  const heroRef = useRef<HTMLDivElement>(null)
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const taglineRef = useRef<HTMLParagraphElement>(null)
+  const descriptionRef = useRef<HTMLParagraphElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (!heroRef.current) return
+
+    // Create animation timeline
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } })
+
+    // Animate the hero section elements
+    tl.fromTo(videoRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 })
+      .fromTo(headingRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, "-=0.5")
+      .fromTo(taglineRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, "-=0.6")
+      .fromTo(descriptionRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, "-=0.6")
+
+    // Add a subtle parallax effect on mouse move
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e
+      const xPos = (clientX / window.innerWidth - 0.5) * 20
+      const yPos = (clientY / window.innerHeight - 0.5) * 20
+
+      gsap.to(headingRef.current, {
+        x: xPos * 0.5,
+        y: yPos * 0.5,
+        duration: 1,
+        ease: "power1.out",
+      })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
   return (
-    <div>
-      <section id="hero" className="relative min-h-screen overflow-hidden">
-        <VideoBackground />
+    <div ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="/vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      </div>
 
-        <div className="relative z-10 flex flex-col justify-center items-center min-h-screen px-4 sm:px-6 md:px-8 pt-20">
-          <div className="w-[90%] mx-auto">
-            <div className="relative mb-4 md:mb-8">
-              <h1 className=" text-purple-400 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight animate-slide-in-left font-Allura">
-                Bold Narratives
-              </h1>
-              <div className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ml-12 sm:ml-16 md:ml-24 animate-slide-in-left delay-300">
-                YOUR STORY IS OUR PASSION
-              </div>
-            </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1
+          ref={headingRef}
+          className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 md:mb-8 tracking-tight leading-none"
+        >
+          WE GROW BRANDS.
+        </h1>
+        <p
+          ref={taglineRef}
+          className="font-medium text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-4 md:mb-6"
+        >
+          Modern, intelligent, strategic AI-powered solutions for growth.
+        </p>
+        <p ref={descriptionRef} className="font-normal text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+          We combine marketing, technology, data and content strategies to position brands.
+        </p>
+      </div>
 
-            <div className="relative mt-6 sm:mt-8 md:mt-16 text-right">
-              <h2 className="font-Allura text-purple-400 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight animate-slide-in-right">
-                Purpose
-              </h2>
-              <div className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mr-12 sm:mr-16 md:mr-24 animate-slide-in-right delay-300">
-                MAKE COMPLEX IDEAS MORE RELATABLE.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <ScrollIndicator />
-      </section>
+      {/* Add inline keyframes for the gradient animation */}
+      <style jsx>{`
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </div>
-  );
-};
-
-export default Hero;
+  )
+}

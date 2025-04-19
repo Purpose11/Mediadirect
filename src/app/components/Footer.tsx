@@ -33,15 +33,16 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             {/* Logo and Social */}
             <div className="md:col-span-3">
-              <Link href="/" className="block mb-8">
-                <Image
-                  src={logo}
-                  alt="Logo"
-                  width={100}
-                  height={70}
-                  className="w-24 md:w-32"
-                />
-              </Link>
+              <div className="flex flex-col">
+                           <Link href="/" className="inline-block">
+                             <div className="flex items-baseline">
+                               <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-extralight tracking-tight">
+                                 mediadirect<span className="font-normal">Ai</span>
+                               </h1>
+                             </div>
+                           </Link>
+                           <p className="text-white text-xs uppercase tracking-widest mt-1 font-light">Powered by AI. Driven by Strategy. </p>
+                         </div>
               <div className="flex gap-4">
                 <Link
                   href="#"
@@ -56,7 +57,7 @@ export default function Footer() {
                   <Youtube className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/media-direct-ai/about/"
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-900 hover:bg-purple-500 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -83,10 +84,16 @@ export default function Footer() {
                   HOME
                 </Link>
                 <Link
-                  href="/about"
+                  href="#aboutus"
                   className="block text-gray-400 hover:text-white transition-colors"
                 >
                   ABOUT US
+                </Link>
+                <Link
+                  href="#services"
+                  className="block text-gray-400 hover:text-white transition-colors"
+                >
+                  SERVICES
                 </Link>
               </nav>
             </div>
@@ -102,7 +109,7 @@ export default function Footer() {
                 </p>
                 <p className="flex gap-2">
                   <span className="text-white">E:</span>{" "}
-                  hello@mediadirectives.com
+                  Info@mediadirectai.com 
                 </p>
               </div>
             </div>
@@ -113,42 +120,35 @@ export default function Footer() {
               <div className="space-y-6">
                 <div>
                   <p className="text-purple-500 font-bold tracking-wider text-sm">
-                    DALLAS
+                  Texas
                   </p>
                   <p className="text-gray-400">
-                    1722 Routh Street, Suite 900, Dallas, TX 75201
+                  6426 Mountain Pines Ln Katy TX 77449 United States.
                   </p>
                 </div>
                 <div>
                   <p className="text-purple-500 font-bold tracking-wider text-sm">
-                    FRISCO
+                  Maryland
                   </p>
                   <p className="text-gray-400">
-                    5 Cowboys Way, Suite 300-45, Frisco, TX 75034
+                  5457 Twin Knolls Rd Ste 300 Columbia, MD 21045 United States.
+
                   </p>
                 </div>
                 <div>
                   <p className="text-purple-500 font-bold tracking-wider text-sm">
-                    HOUSTON
+                  Abuja 
                   </p>
                   <p className="text-gray-400">
-                    24285 Katy Freeway, Suite 300, Katy, TX 77494
+                  Plot 596 Independence Ave, Central Business District Abuja, Nigeria.
                   </p>
                 </div>
                 <div>
                   <p className="text-purple-500 font-bold tracking-wider text-sm">
-                    TAMPA
+                  Durban
                   </p>
                   <p className="text-gray-400">
-                    401 E Jackson St. Suite 3300, Tampa, FL 33602
-                  </p>
-                </div>
-                <div>
-                  <p className="text-purple-500 font-bold tracking-wider text-sm">
-                    MEXICO CITY
-                  </p>
-                  <p className="text-gray-400">
-                    Carracci 60, Col. Mixcoac, CDMX, 04740
+                  5, Joseph Nduli Street Durban CBD, KwaZulu-Natal.
                   </p>
                 </div>
               </div>

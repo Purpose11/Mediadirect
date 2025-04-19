@@ -1,55 +1,99 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react"
 
-export default function VideoBackground() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+interface VideoBackgroundProps {
+  fallbackImageSrc?: string
+}
+
+export function VideoBackground({ fallbackImageSrc }: VideoBackgroundProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [playbackError, setPlaybackError] = useState(false)
 
   useEffect(() => {
-    // Check if we're on a mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const video = videoRef.current
+    if (!video) return
 
-    // Initial check
-    checkMobile();
+    // Handle video loading
+    const handleCanPlay = () => {
+      setIsLoading(false)
 
-    // Add event listener for window resize
-    window.addEventListener("resize", checkMobile);
-
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75; // Slow down the video slightly
+      // Try to play the video
+      video
+        .play()
+        .then(() => {
+          console.log("Video playing successfully")
+          video.style.opacity = "1"
+        })
+        .catch((error) => {
+          console.error("Video autoplay was prevented:", error)
+          setPlaybackError(true)
+        })
     }
 
+    video.addEventListener("canplay", handleCanPlay)
+
+    // Handle errors
+    const handleError = (e: Event) => {
+      console.error("Video error:", e)
+      setPlaybackError(true)
+      setIsLoading(false)
+    }
+
+    video.addEventListener("error", handleError)
+
     return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
+      video.removeEventListener("canplay", handleCanPlay)
+      video.removeEventListener("error", handleError)
+    }
+  }, [])
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-purple-950/70 z-10"></div>
+    <div className="absolute inset-0 w-full h-full -z-10 bg-black">
+      {/* Semi-transparent overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20 z-10" aria-hidden="true" />
+
+      {/* Loading indicator */}
+      {isLoading && !playbackError && (
+        <div className="absolute inset-0 flex items-center justify-center z-5">
+          <div
+            className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full"
+            style={{ animation: "spin 1s linear infinite" }}
+          ></div>
+        </div>
+      )}
+
+      {/* Fallback image if video fails */}
+      {playbackError && fallbackImageSrc && (
+        <div
+          className="absolute inset-0 bg-cover bg-center z-5"
+          style={{ backgroundImage: `url(${fallbackImageSrc})` }}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Video element */}
       <video
         ref={videoRef}
         autoPlay
-        muted
         loop
+        muted
         playsInline
-        className="absolute w-full h-full object-cover"
-        poster="/placeholder.svg?height=1080&width=1920"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          opacity: 0,
+          transition: "opacity 1s ease",
+        }}
+        aria-hidden="true"
       >
-        {/* Use a smaller video file for mobile devices */}
-        <source
-          src={
-            isMobile
-              ? "https://www.thevoicesociety.com/assets/videos/sizzle-tvs.mp4"
-              : "https://www.thevoicesociety.com/assets/videos/sizzle-tvs.mp4"
-          }
-          type="video/mp4"
-        />
+        <source src="/video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
-  );
+  )
 }
