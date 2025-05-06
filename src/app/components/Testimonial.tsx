@@ -18,10 +18,10 @@ export default function TestimonialCarousel() {
   const testimonials: Testimonial[] = [
     {
       quote:
-        "MedidirectAi is among the most focused advertising groups that I have ever worked with. Their candor and enthusiasm about their clients demonstrates an intimate knowledge beyond the basic needs and goals of an ad campaign. While they will go to great lengths to explore new opportunities for the clients, they will only move forward with items after they have been thoroughly vetted and analyzed.",
-      author: "Damon Salerno",
-      position: "Client Partner",
-      company: "Mansion Global",
+        "The dedicated team that supported NIMASA at MediaDirect AI pursued client’s interest with enthusiasm. Their ability to understand complex government agency requirements, navigate challenges, and deliver outstanding results is a testament to their remarkable skills and dedication. You’ll feel supported and valued at every stage of your journey with MediaDirect AI",
+      author: "Dakuku Peterside",
+      position: "Former CEO",
+      company: "Nigerian Maritime Administration and Safety Agency (NIMASA)",
       publication: "The Wall Street Journal",
       logo: "/mansion-global-logo.svg",
     },

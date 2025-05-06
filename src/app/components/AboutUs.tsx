@@ -24,11 +24,11 @@ const AboutUs = () => {
             {/* Hero Text */}
             <div className="space-y-4 mb-12 md:mb-16"  id="#aboutus">
               <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-                <div className="text-outline mb-2 animate-fade-in">WE ARE</div>
+                <div className="text-outline mb-2 animate-fade-in">WE ARE A</div>
                 <div className="text-purple-400 animate-fade-in delay-300">
-                  MEDIA DIRECT
+                  MEDIA AND 
                 </div>
-                <div className="animate-fade-in delay-600">SERVICES</div>
+                <div className="animate-fade-in delay-600">TECHNOLOGY COMPANY</div>
               </h2>
               <p className="text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed animate-fade-in delay-600">
               MediaDirectAI is a media and technology company with offices in the United States, South Africa, and Nigeria. 

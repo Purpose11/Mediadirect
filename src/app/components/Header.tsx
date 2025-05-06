@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import {MedidirectAiLogo} from "./logo"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,16 +25,8 @@ const Header = () => {
          <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex items-center justify-between py-4 md:py-6">
             {/* Logo */}
-            <div className="flex flex-col">
-              <Link href="/" className="inline-block">
-                <div className="flex items-baseline">
-                  <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-extralight tracking-tight">
-                    mediadirect<span className="font-normal">Ai</span>
-                  </h1>
-                </div>
-              </Link>
-              <p className="text-white text-xs uppercase tracking-widest mt-1 font-light">Powered by AI. Driven by Strategy. </p>
-            </div>
+            <MedidirectAiLogo />
+           
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">

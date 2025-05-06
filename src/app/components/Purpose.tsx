@@ -26,9 +26,8 @@ export default function Purpose() {
             </h1>
             <TypeEffect />
             <p className="text-gray-400 text-base md:text-sm max-w-2xl mt-8 mb-8">
-              If you need help finding, refining or communicating your brand's
-              purpose, let's work together! Drop us a note or give us a call. We
-              are always happy to discover the what if.
+            If you need help with growth strategy to maximize competitive advantages and differentiation, refining or communicating your brand's purpose, let's work together! 
+            Drop us a note or give us a call. We are always happy to discover the what if.
             </p>
             <Link
               href="/contact"

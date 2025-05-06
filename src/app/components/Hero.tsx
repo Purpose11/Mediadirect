@@ -69,7 +69,7 @@ export default function Hero() {
         >
           Modern, intelligent, strategic AI-powered solutions for growth.
         </p>
-        <p ref={descriptionRef} className="font-normal text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+        <p ref={descriptionRef} className="font-normal text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
           We combine marketing, technology, data and content strategies to position brands.
         </p>
       </div>
