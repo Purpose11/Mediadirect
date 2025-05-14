@@ -95,7 +95,7 @@ export default function Purpose() {
             </h1>
             <TypeEffect />
             <motion.p
-              className="text-gray-600 text-base md:text-sm max-w-2xl mt-8 mb-8 text-justify"
+              className="text-gray-600 text-base md:text-lg max-w-2xl mt-8 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}

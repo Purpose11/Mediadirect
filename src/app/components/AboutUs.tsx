@@ -46,7 +46,7 @@ const AboutUs = () => {
                 <div className="text-[#990899] animate-fade-in delay-300">
                   MEDIA AND 
                 </div>
-                <div className="animate-fade-in delay-600 text-black">TECHNOLOGY COMPANY</div>
+                <div className="animate-fade-in delay-600 text-black">TECHNOLOGY <br/> COMPANY</div>
               </h2>
               <p className="text-gray-600 max-w-2xl text-lg md:text-xl leading-relaxed animate-fade-in delay-600 text-justify">
               MediaDirectAI is a media and technology company with offices in the United States, South Africa, and Nigeria. 
