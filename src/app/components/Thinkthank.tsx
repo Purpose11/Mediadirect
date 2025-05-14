@@ -19,7 +19,7 @@ export default function ThinkTankPage() {
   }, [])
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-900 to-purple-900 relative overflow-hidden" id="#think-tank">
+    <div className="min-h-screen w-full bg-[#fdf9e7] relative overflow-hidden" id="#think-tank">
       {/* Geometric background patterns */}
       <div className="absolute inset-0 z-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -42,10 +42,10 @@ export default function ThinkTankPage() {
       <div className="relative z-10 container w-[90%] mx-auto px-4 py-20 md:py-32">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
-          <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#990899] mb-6 leading-tight">
             We're Your Think Tank.
           </h1>
-          <p ref={subheadingRef} className="text-xl md:text-2xl text-white/90 font-light">
+          <p ref={subheadingRef} className="text-xl md:text-2xl text-gray-600 font-light">
             Scientific rigor meets moonshots
           </p>
         </div>
@@ -55,10 +55,10 @@ export default function ThinkTankPage() {
           {/* Column 1 */}
           <div
             ref={el => {cardsRef.current[0] = el}}
-            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center"
+            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center rounded-lg"
           >
             <div className="w-16 h-16 mb-6 flex items-center justify-center">
-              <LightbulbIcon className="w-12 h-12 text-white" />
+              <LightbulbIcon className="w-12 h-12 text-[#990899]" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-6">Build Knowledge</h2>
             <p className="text-white/90 text-sm md:text-base leading-relaxed">
@@ -72,10 +72,10 @@ export default function ThinkTankPage() {
           {/* Column 2 */}
           <div
              ref={el => {cardsRef.current[1] = el}}
-            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center"
+            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center rounded-lg"
           >
             <div className="w-16 h-16 mb-6 flex items-center justify-center">
-              <BrainCircuit className="w-12 h-12 text-white" />
+              <BrainCircuit className="w-12 h-12 text-[#990899]" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-6">Convene Experts</h2>
             <p className="text-white/90 text-sm md:text-base leading-relaxed">
@@ -89,10 +89,10 @@ export default function ThinkTankPage() {
           {/* Column 3 */}
           <div
              ref={el => {cardsRef.current[2] = el}}
-            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center"
+            className="bg-black backdrop-blur-sm p-8 flex flex-col items-center text-center rounded-lg"
           >
             <div className="w-16 h-16 mb-6 flex items-center justify-center">
-              <ArrowUpRightFromSquare className="w-12 h-12 text-white" />
+              <ArrowUpRightFromSquare className="w-12 h-12 text-[#990899]" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-6">Thought Leadership</h2>
             <p className="text-white/90 text-sm md:text-base leading-relaxed">

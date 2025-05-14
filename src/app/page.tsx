@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
-import LoadingScreen from "@/app/components/loading";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import Offer from "./components/Offer";
@@ -21,20 +20,19 @@ export default function Home() {
  
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      <LoadingScreen />
       {/* Social Media Sidebar */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center gap-6 p-4">
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center gap-6 p-4 text-gray-400">
         <Link href="https://www.linkedin.com/company/media-direct-ai/about/ " aria-label="LinkedIn">
-          <Linkedin className="w-5 h-5 text-white hover:text-purple-300 transition-colors" />
+          <Linkedin className="w-5 h-5 text-gray-400 hover:text-purple-300 transition-colors" />
         </Link>
         <Link href="#" aria-label="YouTube">
-          <Youtube className="w-5 h-5 text-white hover:text-purple-300 transition-colors" />
+          <Youtube className="w-5 h-5 text-gray-400 hover:text-purple-300 transition-colors" />
         </Link>
         <Link href="#" aria-label="Instagram">
-          <Instagram className="w-5 h-5 text-white hover:text-purple-300 transition-colors" />
+          <Instagram className="w-5 h-5 text-gray-400 hover:text-purple-300 transition-colors" />
         </Link>
         <Link href="#" aria-label="Facebook">
-          <Facebook className="w-5 h-5 text-white hover:text-purple-300 transition-colors" />
+          <Facebook className="w-5 h-5 text-gray-400 hover:text-purple-300 transition-colors" />
         </Link>
         <div className="h-20 w-px bg-white/30 my-2"></div>
         <div className="vertical-text transform -rotate-90 whitespace-nowrap text-xs tracking-widest">

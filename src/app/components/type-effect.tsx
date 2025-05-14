@@ -36,7 +36,7 @@ export default function TypeEffect() {
   return (
     <span
       ref={elementRef}
-      className="text-purple-500 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl block h-20"
+      className="text-[#990899] font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl block h-20"
       aria-live="polite"
     ></span>
   );

@@ -19,7 +19,7 @@ export default function Footer() {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12">
           LET'S BUILD SOMETHING
           <br />
-          <span className="text-purple-500 italic">AMAZING</span> TOGETHER
+          <span className="text-[#990899] italic">AMAZING</span> TOGETHER
         </h2>
         <button className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-purple-500 text-white px-8 py-3 transition-all duration-300 text-sm tracking-wider rounded-2xl">
           <ArrowRight className="w-4 h-4" />
@@ -33,16 +33,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             {/* Logo and Social */}
             <div className="md:col-span-3">
-              <div className="flex flex-col">
-                           <Link href="/" className="inline-block">
-                             <div className="flex items-baseline">
-                               <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-extralight tracking-tight">
-                                 mediadirect<span className="font-normal">Ai</span>
-                               </h1>
-                             </div>
-                           </Link>
-                           <p className="text-white text-xs uppercase tracking-widest mt-1 font-light">Powered by AI. Driven by Strategy. </p>
-                         </div>
+              <img src={logo.src} className="md:h-[80px] h-[50px]"/>
               <div className="flex gap-4">
                 <Link
                   href="#"
@@ -119,7 +110,7 @@ export default function Footer() {
               <h3 className="text-sm font-bold mb-6 tracking-wider">ADDRESS</h3>
               <div className="space-y-6">
                 <div>
-                  <p className="text-purple-500 font-bold tracking-wider text-sm">
+                  <p className="text-[#990899] font-bold tracking-wider text-sm">
                   Texas
                   </p>
                   <p className="text-gray-400">
@@ -127,7 +118,7 @@ export default function Footer() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-purple-500 font-bold tracking-wider text-sm">
+                  <p className="text-[#990899] font-bold tracking-wider text-sm">
                   Maryland
                   </p>
                   <p className="text-gray-400">
@@ -136,7 +127,7 @@ export default function Footer() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-purple-500 font-bold tracking-wider text-sm">
+                  <p className="text- font-bold tracking-wider text-sm">
                   Abuja 
                   </p>
                   <p className="text-gray-400">
@@ -144,7 +135,7 @@ export default function Footer() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-purple-500 font-bold tracking-wider text-sm">
+                  <p className="text-[#990899] font-bold tracking-wider text-sm">
                   Durban
                   </p>
                   <p className="text-gray-400">

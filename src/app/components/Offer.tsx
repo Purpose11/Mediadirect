@@ -28,7 +28,7 @@ export default function Home() {
           {/* Headline */}
           <div className="mb-20">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-purple-500">
+              <span className="text-[#990899]">
                 WE ARE A BILINGUAL AGENCY:
               </span>
             </h1>
@@ -43,7 +43,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Column 1 */}
             <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
-              <div className="mb-6 text-purple-500">
+              <div className="mb-6 text-[#990899]">
                 <CustomerIcon />
               </div>
               <h3 className="text-xl font-bold mb-4">CUSTOMER FOCUSED</h3>
@@ -55,7 +55,7 @@ export default function Home() {
 
             {/* Column 2 */}
             <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
-              <div className="mb-6 text-purple-500">
+              <div className="mb-6 text-[#990899]">
                 <StrategyIcon />
               </div>
               <h3 className="text-xl font-bold mb-4">STRATEGY DRIVEN</h3>
@@ -67,7 +67,7 @@ export default function Home() {
 
             {/* Column 3 */}
             <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
-              <div className="mb-6 text-purple-500">
+              <div className="mb-6 text-[#990899]">
                 <DigitalIcon />
               </div>
               <h3 className="text-xl font-bold mb-4">DIGITALLY LED</h3>
@@ -79,7 +79,7 @@ export default function Home() {
 
             {/* Column 4 */}
             <div className="bg-transparent p-6 backdrop-blur-sm border border-white/10 flex flex-col items-center text-center transition-all">
-              <div className="mb-6 text-purple-500">
+              <div className="mb-6 text-[#990899]">
                 <CultureIcon />
               </div>
               <h3 className="text-xl font-bold mb-4">CULTURALLY SAVVY</h3>

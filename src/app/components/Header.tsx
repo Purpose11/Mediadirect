@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import {MedidirectAiLogo} from "./logo"
+import  logo  from "../.././images/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,10 +23,9 @@ const Header = () => {
     >
       <div className="relative">
          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="flex items-center justify-between py-4 md:py-6">
+          <div className="flex items-center justify-between py-2 md:py-2">
             {/* Logo */}
-            <MedidirectAiLogo />
-           
+           <img src={logo.src} className="md:h-[80px] h-[50px]"/>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -56,7 +55,7 @@ const Header = () => {
               </Link>
               <Link
                 href="/contact"
-                className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold uppercase text-sm px-6 py-2 rounded-sm transition-colors"
+                className="bg-[#990899] text-white font-bold uppercase text-sm px-6 py-2 rounded-sm transition-colors"
               >
                 Connect
               </Link>

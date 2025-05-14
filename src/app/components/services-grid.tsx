@@ -12,7 +12,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <MonitorPlay className="w-12 h-12 text-purple-500" />,
+    icon: <MonitorPlay className="w-12 h-12 text-[#990899]" />,
     title: "BRANDING AND MARKETING STRATEGY",
     items: [
       "Brand Positioning",
@@ -25,7 +25,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: < Presentation className="w-12 h-12 text-purple-500" />,
+    icon: < Presentation className="w-12 h-12 text-[#990899]" />,
     title: "STRATEGIC COMMUNICATIONS PLANNING",
     items: [
       "Media Relations",
@@ -37,7 +37,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: <Lightbulb className="w-12 h-12 text-purple-500" />,
+    icon: <Lightbulb className="w-12 h-12 text-[#990899]" />,
     title: "CREATIVE CONCEPTING AND SERVICES",
     items: [
       "Brand Identity",
@@ -50,7 +50,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: <Video className="w-12 h-12 text-purple-500" />,
+    icon: <Video className="w-12 h-12 text-[#990899]" />,
     title: "CONTENT AND PRODUCTION SERVICES",
     items: [
       "Video/Graphic/Editorial Production",
@@ -62,7 +62,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: <BarChart3 className="w-12 h-12 text-purple-500" />,
+    icon: <BarChart3 className="w-12 h-12 text-[#990899]" />,
     title: "ANALYTICS AND TECHNOLOGY SOLUTIONS",
     items: [
       "Opportunity Assessment",
